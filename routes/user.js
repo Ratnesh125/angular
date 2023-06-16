@@ -3,10 +3,6 @@ const express=require("express");
 const router=express.Router();
 const User=require("../models/mymodel")
 
-router.get("/add" ,(req,res)=>{
-   res.render("adduser")
-})
-
 router.get("/" ,async(req,res)=>{
     var data=await User.find();
     res.send(data);
@@ -21,9 +17,17 @@ router.post("/" ,async(req,res)=>{
     catch(err){res.send(err);}
 })
 
-router.get("/users" ,async(req,res)=>{
-    var data=await User.find();
-    res.send(data);
+router.get("/add" ,(req,res)=>{
+   res.render("adduser")
+})
+
+router.delete("/:id" ,async(req,res)=>{
+    var data=await User.findByIdAndDelete(req.params.id);
+    res.json(data);
+})
+router.put("/:id" ,async(req,res)=>{
+    var data=await User.findByIdAndUpdate(req.params.id,req.body);
+    res.json(data);
 })
 module.exports=router;
 

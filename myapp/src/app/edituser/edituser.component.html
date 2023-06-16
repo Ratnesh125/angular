@@ -1,0 +1,8 @@
+<p>edituser works!</p>
+
+<form #f3="ngForm" (ngSubmit)="updateUser(f3.value)">
+    ID<input name="_id" ngModel><br>
+    Name<input name="name" ngModel><br>
+    <button>UPDATE</button>
+</form>
+{{ result }}

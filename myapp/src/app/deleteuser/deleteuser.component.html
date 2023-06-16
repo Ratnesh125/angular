@@ -1,0 +1,12 @@
+<p>deleteuser works!</p>
+
+
+<form #f2="ngForm" (ngSubmit)="removeUser(f2.value)">
+    ID<input name="_id" ngModel><br>
+    <button>DELETE</button>
+    <div>
+        this record id deleted
+        {{result}}
+    </div>
+    
+</form>
