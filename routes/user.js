@@ -29,6 +29,10 @@ router.put("/:id" ,async(req,res)=>{
     var data=await User.findByIdAndUpdate(req.params.id,req.body);
     res.json(data);
 })
+router.get("/:id" ,async(req,res)=>{
+    var data=await User.findById(req.params.id);
+    res.json(data);
+})
 module.exports=router;
 
 

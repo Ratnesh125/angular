@@ -16,4 +16,11 @@ export class AppComponent {
     this.service.show().subscribe((n:any)=>this.data=n);
 
   }
+  result:any
+  search(n:any)
+  {
+    //this.service.show();
+    this.service.findUser(n).subscribe((x:any)=>this.data=x);
+
+  }
 }

@@ -7,11 +7,12 @@ import { MyserviceService } from '../myservice.service';
 })
 export class ShowuserComponent {
 
-  constructor(private service:MyserviceService)
-
-  {}
+ /* constructor(private service:MyserviceService)
+  {}*/
+  response:any
   data:any;
-  getData(){
-    this.service.show().subscribe((n:any)=>this.data=n);
+  async getData(){
+    this.response=await fetch("http://localhost:3000/users")
+    this.data=await this.response.json();
   }
 }

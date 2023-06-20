@@ -30,7 +30,13 @@ export class MyserviceService {
   {
     this.url="http://localhost:3000/users/"+n._id;
     return this.http.put(this.url,n)
- 
+  
+  }
+  findUser(n:any)
+  {
+    this.url="http://localhost:3000/users/"+n._id;
+    return this.http.get(this.url)
+  
   }
 
 
